@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(145deg, #000000, #434343);
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+
+        form {
+            background: linear-gradient(145deg, #333333, #000000);
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #f1f1f1;
+            font-weight: 600;
+        }
+
+        form div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="dob"],
+        textarea {
+            width:350px;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: #1e1e1e;
+            color: white;
+            border: 2px solid #555;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="dob"]:focus,
+        textarea:focus {
+            border-color: #6c63ff;
+            background-color: #333;
+            box-shadow: 0 4px 12px rgba(108, 99, 255, 0.5);
+            outline: none;
+        }
+
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        textarea {
+            resize: none;
+            background-color: #1e1e1e;
+            border: 2px solid #555;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(108, 99, 255, 0.4);
+            font-weight: 600;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4a47ff;
+            box-shadow: 0 6px 16px rgba(108, 99, 255, 0.5);
+        }
+
+        input[type="radio"]+label,
+        input[type="checkbox"]+label {
+            display: inline-block;
+            margin-right: 15px;
+            color: #ccc;
+        }
+
+        label[for="terms&condition"] {
+            font-size: 13px;
+        }
+
+        ::placeholder {
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/submit" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input required placeholder="Enter your name" type="text" id="name" name="name" />
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input required placeholder="Enter your email" type="email" id="email" name="email" />
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input required placeholder="Enter your password" type="password" id="password" name="password" />
+        </div>
+        <div>
+            <label for="dob">Date Of Birth</label>
+            <input required placeholder="Enter date of Birth" type="date" id="dob" name="dob" />
+        </div>
+        <div>
+            <h3>Subscription Plan</h3>
+            <input type="radio" id="basic" name="subscription" />
+            <label for="basic">Basic</label>
+            <input type="radio" id="premium" name="subscription" />
+            <label for="premium">Premium</label>
+            <input type="radio" id="vip" name="subscription" />
+            <label for="vip">VIP</label>
+        </div>
+        <div>
+            <input type="checkbox" id="terms&condition" />
+            <label for="terms&condition">I agree to the terms & conditions</label>
+        </div>
+        <div>
+            <label for="comments">Comments:</label>
+            <textarea name="comments" id="comments" rows="3" placeholder="Enter your comments"></textarea>
+        </div>
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+
+</html>
